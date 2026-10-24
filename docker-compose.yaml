@@ -2,9 +2,13 @@
 # on Mooncake. See fleet's coolify-security runbook before rebuilding or pruning.
 services:
   web:
-    image: coolify-security/portfolio-antonia:20261024
+    image: coolify-security/portfolio-antonia:20261024-r2
     pull_policy: never
     restart: unless-stopped
+    mem_limit: 1g
+    memswap_limit: 1g
+    cpus: 2
+    pids_limit: 256
     expose:
       - "3000"
     labels:
